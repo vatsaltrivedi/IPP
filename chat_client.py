@@ -1,5 +1,5 @@
 # chat_client.py
-
+# to read the code start from the main fuction at the bottom and follow the comments
 import sys
 import socket
 import select

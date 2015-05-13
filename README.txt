@@ -1,3 +1,6 @@
+Basic Version --- Multithreaded Chat Server
+
+Advanced Version --
 
 Requires Python 2.7 installed on the system
 Tested on Ubuntu Amazon EC2 instances
