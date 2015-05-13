@@ -1,5 +1,4 @@
-
-# peer_server.py
+# chat_server.py
  
 import sys
 import socket
@@ -10,7 +9,7 @@ SOCKET_LIST = []
 RECV_BUFFER = 4096 
 PORT = 9009
 
-def peer_server():
+def chat_server():
 
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -39,7 +38,7 @@ def peer_server():
              
             # a message from a client, not a new connection
             else:
-                
+                # process data recieved from client, 
                 try:
                     # receiving data from the socket.
                     data = sock.recv(RECV_BUFFER)
@@ -61,6 +60,7 @@ def peer_server():
 
     server_socket.close()
     
+# broadcast chat messages to all connected clients
 def broadcast (server_socket, sock, message):
     for socket in SOCKET_LIST:
         # send the message only to peer
@@ -76,4 +76,4 @@ def broadcast (server_socket, sock, message):
  
 if __name__ == "__main__":
 
-    sys.exit(peer_server()) 
+    sys.exit(chat_server())   
