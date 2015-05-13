@@ -127,7 +127,7 @@ if __name__ == "__main__":
     ct = threading.Thread(target = gateway_thread, args = (s,))
     #gateway_thread method is invoked for this thread
     threadPool.append(ct)
-    
+    ct.start()
     # starting server
     sys.exit(peer_server())
     #peer_server(method is envoked)
